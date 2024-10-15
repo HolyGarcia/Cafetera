@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,8 +23,9 @@ namespace Cafetera
             int result7;
             int cant;
             int azucar; 
-            int cantAzucar = 10;
+            int cantAzucar = 6;
             int resultAzucar;
+            int altAzucar;
             int cafe = 3;
             int sobreCafe;
             int resultCafe;
@@ -86,7 +88,10 @@ namespace Cafetera
                         cant = vaso3onz - 1;
                         result3 = cant;
                         vaso3onz = result3;
-
+                        if (vaso3onz < 0)
+                        {
+                            vaso3onz = 0;
+                        }
 
                         Console.WriteLine();
                         Console.WriteLine("                                                                              Cantidad Vaso de 3 Onz: " + "" + vaso3onz);
@@ -128,12 +133,18 @@ namespace Cafetera
 
                     if (num == 2)
                     {
-                        Console.Clear();
 
+
+
+                        Console.Clear();
+                     
                         cant = vaso5onz - 1;
                         result5 = cant;
                         vaso5onz = result5;
-
+                        if (vaso5onz < 0)
+                        {
+                            vaso5onz = 0;
+                        }
 
                         Console.WriteLine();
                         Console.WriteLine("                                                                              Cantidad Vaso de 3 Onz: " + "" + vaso3onz);
@@ -149,6 +160,7 @@ namespace Cafetera
                         Console.WriteLine();
                         Console.WriteLine();
 
+                       
 
                         if (result5 < 0)
                         {
@@ -180,7 +192,10 @@ namespace Cafetera
                         cant = vaso7onz - 1;
                         result7 = cant;
                         vaso7onz = result7;
-
+                        if (vaso7onz < 0)
+                        {
+                            vaso7onz = 0;
+                        }
 
                         Console.WriteLine();
                         Console.WriteLine("                                                                              Cantidad Vaso de 3 Onz: " + "" + vaso3onz);
@@ -225,27 +240,71 @@ namespace Cafetera
                 } while (num != 0 && num != 1 && num != 2 && num != 3);
 
 
+                Console.WriteLine();
+                Console.WriteLine("     Ingrese Cantidad de cucharadas de Azucar: ");
+                Console.WriteLine();
+                azucar = Convert.ToByte(Console.ReadLine());
+                Console.WriteLine();
+                Console.WriteLine();
+                resultAzucar = cantAzucar;
+                Console.WriteLine();
 
-                if (cantAzucar > 0)
+                do
                 {
+                   
 
-                    Console.WriteLine();
-                    Console.WriteLine("     Ingrese Cantidad de cucharadas de Azucar: ");
-                    Console.WriteLine();
-                    azucar = Convert.ToByte(Console.ReadLine());
-                    Console.WriteLine();
-                    Console.WriteLine();
+                    if (azucar <= cantAzucar)
+                    {
+                     
+                        altAzucar = cantAzucar - azucar;
+                        cantAzucar = altAzucar;
+                      
 
-                    azucar = cantAzucar - azucar;
-                    resultAzucar = azucar;
-                    cantAzucar = resultAzucar;
+                        Console.Clear();
+                    }
 
-                    Console.Clear();
 
-                }
-                
 
-                if (cantAzucar < 0)
+                    if (azucar > cantAzucar)
+                    {
+                        do {
+                        cantAzucar = resultAzucar;
+                        Console.Clear();
+                        Console.WriteLine();
+                        Console.WriteLine("     Cantidad invalida de Azucar: ");
+                        Console.WriteLine();
+                        Console.WriteLine("     Excede la cantidad disponible, " + ""+ " Disponible: "+ cantAzucar);
+                        Console.WriteLine();
+                        Console.WriteLine("     Ingrese Enter para continuar: ");
+                        Console.ReadKey();
+                        
+                      
+
+                            Console.Clear();
+
+                            Console.WriteLine();
+                            Console.WriteLine("     Ingrese Cantidad de cucharadas de Azucar: " + "" + " Disponible: " + cantAzucar);
+                            Console.WriteLine();
+                            azucar = Convert.ToByte(Console.ReadLine());
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine();
+
+                            altAzucar = cantAzucar - azucar;
+                            cantAzucar = altAzucar;
+
+
+                        } while (azucar > resultAzucar);
+                    }
+
+                   
+
+                } while (cantAzucar < 0);
+
+
+
+
+                if (cantAzucar <= 0)
                 {
                     Console.WriteLine();
                     Console.WriteLine();
@@ -357,7 +416,7 @@ namespace Cafetera
                 Console.WriteLine();
                 Console.WriteLine();
 
-                if (resultCafe < 0)
+                if (resultCafe <= 0)
                 {
                     Console.Clear();
                    
