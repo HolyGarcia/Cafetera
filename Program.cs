@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Cafetera
@@ -20,135 +21,103 @@ namespace Cafetera
             int result5;
             int result7;
             int cant;
-            int azucar;
-            int cafe = 2;
+            int azucar; 
+            int cantAzucar = 10;
+            int resultAzucar;
+            int cafe = 3;
             int sobreCafe;
-          int  resultCafe;
+            int resultCafe;
+            int validar;
 
-            Console.WriteLine("Seleccione un tamaño de vaso: ");
+            Console.WriteLine();
+            Console.WriteLine("                                                                              Cantidad Vaso de 3 Onz: " + "" + vaso3onz);
+            Console.WriteLine("                                                                              Cantidad Vaso de 5 Onz: " + "" + vaso5onz);
+            Console.WriteLine("                                                                              Cantidad Vaso de 7 Onz: " + "" + vaso7onz);
+            Console.WriteLine("                                                                              Cantidad de cucharadas de Azucar: " + "" + cantAzucar);
+            Console.WriteLine("                                                                              Cantidad paquetes de Cafe: " + "" + cafe);
+            Console.WriteLine("      Seleccione un tamaño de vaso: ");
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine("1:  3 Onz");
-            Console.WriteLine("2:  5 Onz");
-            Console.WriteLine("3:  7 Onz");
+            Console.WriteLine("      1:  3 Onz");
+            Console.WriteLine("      2:  5 Onz");
+            Console.WriteLine("      3:  7 Onz");
             Console.WriteLine();
-            Console.WriteLine("0: Salir");
+            Console.WriteLine("      0: Salir");
             Console.WriteLine();
             Console.WriteLine();
+
 
             do
             {
-        
-            num = Convert.ToByte(Console.ReadLine());
+                num = Convert.ToByte(Console.ReadLine());
 
-                if (num == 1)
+
+                do
                 {
 
-                    cant = vaso3onz - 1;
-                    result3 = cant;
-                    vaso3onz = result3;
-
-
-                    Console.WriteLine();
-                    Console.WriteLine("Eligió vaso de 3 Onz");
-                    Console.WriteLine();
-                    Console.WriteLine();
-
-                    Console.WriteLine(cant);
-                    Console.WriteLine(result3);
-                    Console.WriteLine(vaso3onz);
-
-                    if (result3 < 1)
+                    if (num != 0 && num != 1 && num != 2 && num != 3)
                     {
-                        Console.WriteLine("No hay vasos de 3 Onz");
-                        Console.WriteLine("presione Enter para continuar");
-                        Console.ReadKey();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Debe Elegir una opcion valida");
+
+                        Thread.Sleep(2000);
                         Console.Clear();
 
-                        Console.WriteLine("Seleccione un tamaño de vaso: ");
+                        Console.WriteLine("      Seleccione un tamaño de vaso: ");
                         Console.WriteLine();
                         Console.WriteLine();
-                        Console.WriteLine("2:  5 Onz");
-                        Console.WriteLine("3:  7 Onz");
+                        Console.WriteLine("      1:  3 Onz");
+                        Console.WriteLine("      2:  5 Onz");
+                        Console.WriteLine("      3:  7 Onz");
                         Console.WriteLine();
-                        Console.WriteLine("0: Salir");
+                        Console.WriteLine("      0: Salir");
                         Console.WriteLine();
                         Console.WriteLine();
 
                         num = Convert.ToByte(Console.ReadLine());
                     }
- 
-                }
-
-                if (num == 2)
-                {
-
-                    cant = vaso5onz - 1;
-                    result5 = cant;
-                    vaso5onz = result5;
 
 
-                    Console.WriteLine();
-                    Console.WriteLine("Eligió vaso de 5 Onz");
-                    Console.WriteLine();
-                    Console.WriteLine();
-
-                    Console.WriteLine(cant);
-                    Console.WriteLine(result5);
-                    Console.WriteLine(vaso5onz);
-
-                    if (result5 < 1)
+                    if (num == 1)
                     {
-                        Console.WriteLine("No hay vasos de 5 Onz");
-                        Console.WriteLine("presione Enter para continuar");
-                        Console.ReadKey();
                         Console.Clear();
 
-                        Console.WriteLine("Seleccione un tamaño de vaso: ");
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("1:  3 Onz");
-                        Console.WriteLine("3:  7 Onz");
-                        Console.WriteLine();
-                        Console.WriteLine("0: Salir");
-                        Console.WriteLine();
-                        Console.WriteLine();
-
-                        num = Convert.ToByte(Console.ReadLine());
-                    }
-                }
-
-                    if (num == 3)
-                    {
-
-                        cant = vaso7onz - 1;
-                        result7 = cant;
-                        vaso7onz = result7;
+                        cant = vaso3onz - 1;
+                        result3 = cant;
+                        vaso3onz = result3;
 
 
                         Console.WriteLine();
-                        Console.WriteLine("Eligió vaso de 7 Onz");
+                        Console.WriteLine("                                                                              Cantidad Vaso de 3 Onz: " + "" + vaso3onz);
+                        Console.WriteLine("                                                                              Cantidad Vaso de 5 Onz: " + "" + vaso5onz);
+                        Console.WriteLine("                                                                              Cantidad Vaso de 7 Onz: " + "" + vaso7onz);
+                        Console.WriteLine("                                                                              Cantidad de cucharadas de Azucar: " + "" + cantAzucar);
+                        Console.WriteLine("                                                                              Cantidad paquetes de Cafe: " + "" + cafe);
+                        Console.WriteLine();
+
+                        Console.WriteLine();
+                        Console.WriteLine("     Eligió vaso de 3 Onz");
                         Console.WriteLine();
                         Console.WriteLine();
 
-                        if (result7 < 1)
+
+
+                        if (result3 < 0)
                         {
-                            Console.WriteLine("No hay vasos de 7 Onz");
-                            Console.WriteLine("presione Enter para continuar");
+                           
+                            Console.WriteLine("   No hay vasos de 3 Onz");
+                            Console.WriteLine("   presione Enter para continuar");
                             Console.ReadKey();
                             Console.Clear();
 
-                            Console.WriteLine(cant);
-                            Console.WriteLine(result7);
-                            Console.WriteLine(vaso7onz);
-
-                            Console.WriteLine("Seleccione un tamaño de vaso: ");
+                            Console.WriteLine("    Seleccione un tamaño de vaso: ");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("1:  3 Onz");
-                            Console.WriteLine("2:  5 Onz");
+                            Console.WriteLine("    2:  5 Onz");
+                            Console.WriteLine("    3:  7 Onz");
                             Console.WriteLine();
-                            Console.WriteLine("0: Salir");
+                            Console.WriteLine("    0: Salir");
                             Console.WriteLine();
                             Console.WriteLine();
 
@@ -157,46 +126,261 @@ namespace Cafetera
 
                     }
 
-                Console.WriteLine();
-                Console.WriteLine("Seleccione Cantidad de Azucar: de 1 a 5 cucharadas ");
-                azucar = Convert.ToByte(Console.ReadLine());
-                Console.WriteLine();
-                Console.WriteLine();
+                    if (num == 2)
+                    {
+                        Console.Clear();
+
+                        cant = vaso5onz - 1;
+                        result5 = cant;
+                        vaso5onz = result5;
 
 
-                if (azucar > 5)
+                        Console.WriteLine();
+                        Console.WriteLine("                                                                              Cantidad Vaso de 3 Onz: " + "" + vaso3onz);
+                        Console.WriteLine("                                                                              Cantidad Vaso de 5 Onz: " + "" + vaso5onz);
+                        Console.WriteLine("                                                                              Cantidad Vaso de 7 Onz: " + "" + vaso7onz);
+                        Console.WriteLine("                                                                              Cantidad de cucharadas de Azucar: " + "" + cantAzucar);
+                        Console.WriteLine("                                                                              Cantidad paquetes de Cafe: " + "" + cafe);
+                        Console.WriteLine();
+
+
+                        Console.WriteLine();
+                        Console.WriteLine("       Eligió vaso de 5 Onz");
+                        Console.WriteLine();
+                        Console.WriteLine();
+
+
+                        if (result5 < 0)
+                        {
+                           
+                            Console.WriteLine("    No hay vasos de 5 Onz");
+                            Console.WriteLine("    presione Enter para continuar");
+                            Console.ReadKey();
+                            Console.Clear();
+
+                            Console.WriteLine("     Seleccione un tamaño de vaso: ");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("      1:  3 Onz");
+                            Console.WriteLine("      3:  7 Onz");
+                            Console.WriteLine();
+                            Console.WriteLine("      0: Salir");
+                            Console.WriteLine();
+                            Console.WriteLine();
+
+                            num = Convert.ToByte(Console.ReadLine());
+                        }
+                    }
+
+                    if (num == 3)
+                    {
+
+                        Console.Clear();
+
+                        cant = vaso7onz - 1;
+                        result7 = cant;
+                        vaso7onz = result7;
+
+
+                        Console.WriteLine();
+                        Console.WriteLine("                                                                              Cantidad Vaso de 3 Onz: " + "" + vaso3onz);
+                        Console.WriteLine("                                                                              Cantidad Vaso de 5 Onz: " + "" + vaso5onz);
+                        Console.WriteLine("                                                                              Cantidad Vaso de 7 Onz: " + "" + vaso7onz);
+                        Console.WriteLine("                                                                              Cantidad de cucharadas de Azucar: " + "" + cantAzucar);
+                        Console.WriteLine("                                                                              Cantidad paquetes de Cafe: " + "" + cafe);
+                        Console.WriteLine();
+
+                        Console.WriteLine();
+                        Console.WriteLine("       Eligió vaso de 7 Onz");
+                        Console.WriteLine();
+                        Console.WriteLine();
+
+                        if (result7 < 0)
+                        {
+                           
+                            Console.WriteLine("    No hay vasos de 7 Onz");
+                            Console.WriteLine("    presione Enter para continuar");
+                            Console.ReadKey();
+                            Console.Clear();
+
+
+
+                            Console.WriteLine("    Seleccione un tamaño de vaso: ");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("    1:  3 Onz");
+                            Console.WriteLine("    2:  5 Onz");
+                            Console.WriteLine();
+                            Console.WriteLine("    0: Salir");
+                            Console.WriteLine();
+                            Console.WriteLine();
+
+                            num = Convert.ToByte(Console.ReadLine());
+                        }
+
+                    }
+
+             
+
+                } while (num != 0 && num != 1 && num != 2 && num != 3);
+
+
+
+                if (cantAzucar > 0)
                 {
-                    Console.WriteLine("Cantidad invalida Seleccione: de 1 a 5 cucharadas ");
+
                     Console.WriteLine();
+                    Console.WriteLine("     Ingrese Cantidad de cucharadas de Azucar: ");
                     Console.WriteLine();
                     azucar = Convert.ToByte(Console.ReadLine());
                     Console.WriteLine();
                     Console.WriteLine();
+
+                    azucar = cantAzucar - azucar;
+                    resultAzucar = azucar;
+                    cantAzucar = resultAzucar;
+
+                    Console.Clear();
+
                 }
+                
+
+                if (cantAzucar < 0)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("           No hay Azucar, Desea Continuar?");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("           1. Si");
+                    Console.WriteLine("           2. No");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    validar = Convert.ToByte(Console.ReadLine());
+                    Console.WriteLine();
+                    Console.WriteLine();
+
+                    
+
+                    Console.Clear();
+
+                    if (validar == 1)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("       Eligió Café sin Azucar");
+                        Console.WriteLine();
+                        Console.WriteLine("       Seleccione Enter para continuar");
+                        Console.ReadKey();
+
+
+                    }
+
+                    if (validar == 2)
+                    {
+                        Thread.Sleep(4000);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Apagando.....");
+                        num = 0;
+                    }
+                    
+                }
+                
+                Console.Clear();
+
+                Console.WriteLine();
+                Console.WriteLine("                                                                              Cantidad Vaso de 3 Onz: " + "" + vaso3onz);
+                Console.WriteLine("                                                                              Cantidad Vaso de 5 Onz: " + "" + vaso5onz);
+                Console.WriteLine("                                                                              Cantidad Vaso de 7 Onz: " + "" + vaso7onz);
+                Console.WriteLine("                                                                              Cantidad de cucharadas de Azucar: " + "" + cantAzucar);
+                Console.WriteLine("                                                                              Cantidad paquetes de Cafe: " + "" + cafe);
+                Console.WriteLine();
 
                 sobreCafe = cafe - 1;
                 resultCafe = sobreCafe;
+                cafe = resultCafe;
 
 
-                Console.WriteLine("Hay Cafe");
-                Console.WriteLine("presione Enter para continuar");
+               
+              
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("             Hay Cafe");
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("             Preparando....");
+                Console.WriteLine();
+                Console.WriteLine();
+                Thread.Sleep(3000);
+                Console.Clear();
+                Console.WriteLine();
+
+                Console.WriteLine("    El Cafe está Listo!");
+                Console.WriteLine();
+                Console.WriteLine( "           ';                ");
+                Console.WriteLine("            `.                ");
+                Console.WriteLine("            `.'               ");
+                Console.WriteLine("             . '              ");
+                Console.WriteLine("           / / /              ");
+                Console.WriteLine("      _______________         ");
+                Console.WriteLine("     |               |====ɿ   ");
+                Console.WriteLine("     |     CofFeE    |   //   ");
+                Console.WriteLine("     |~~~~~~~~~~~~~~~|==''    ");
+                Console.WriteLine("      COOOOOOOOOOOOOO         ");
+                Console.WriteLine("   ___` ____________/____     ");
+                Console.WriteLine("    ˋ.________________.ˊ      ");
+                Console.WriteLine("                              ");
+                Console.WriteLine("                              ");
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("  presione Enter para continuar");
                 Console.ReadKey();
                 Console.Clear();
 
-                Console.WriteLine("Seleccione un tamaño de vaso: ");
+                Console.WriteLine();
+                Console.WriteLine("                                                                              Cantidad Vaso de 3 Onz: " + "" + vaso3onz);
+                Console.WriteLine("                                                                              Cantidad Vaso de 5 Onz: " + "" + vaso5onz);
+                Console.WriteLine("                                                                              Cantidad Vaso de 7 Onz: " + "" + vaso7onz);
+                Console.WriteLine("                                                                              Cantidad de cucharadas de Azucar: " + "" + cantAzucar);
+                Console.WriteLine("                                                                              Cantidad paquetes de Cafe: " + "" + cafe);
+                Console.WriteLine("      Seleccione un tamaño de vaso: ");
                 Console.WriteLine();
                 Console.WriteLine();
-                Console.WriteLine("1:  3 Onz");
-                Console.WriteLine("2:  5 Onz");
-                Console.WriteLine("3:  7 Onz");
+                Console.WriteLine("      1:  3 Onz");
+                Console.WriteLine("      2:  5 Onz");
+                Console.WriteLine("      3:  7 Onz");
                 Console.WriteLine();
-                Console.WriteLine("0: Salir");
+                Console.WriteLine("      0: Salir");
                 Console.WriteLine();
                 Console.WriteLine();
 
-                if (resultCafe < 1)
+                if (resultCafe < 0)
                 {
-                    Console.WriteLine("No hay Cafe");
+                    Console.Clear();
+                   
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("         No hay Cafe...    :(");
+                    Console.WriteLine();
+                    Console.WriteLine("         Apagando...");
+                    Thread.Sleep(2000);
+                    num = 0;
+
+                }
+
+                if (num != 0 && num != 1 && num != 2 && num != 3)
+                {
+                    Console.WriteLine("Debe Elegir una opcion valida");
+
+                    Thread.Sleep(2000);
+                    Console.Clear();
+
+
                 }
 
             } while (num != 0);
