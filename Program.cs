@@ -26,7 +26,7 @@ namespace Cafetera
             int cantAzucar = 6;
             int resultAzucar;
             int altAzucar;
-            int cafe = 3;
+            int cafe = 4;
             int sobreCafe;
             int resultCafe;
             int validar;
@@ -51,6 +51,8 @@ namespace Cafetera
 
             do
             {
+                
+
                 num = Convert.ToByte(Console.ReadLine());
 
 
@@ -112,8 +114,7 @@ namespace Cafetera
                         {
                            
                             Console.WriteLine("   No hay vasos de 3 Onz");
-                            Console.WriteLine("   presione Enter para continuar");
-                            Console.ReadKey();
+                            Thread.Sleep(2000);
                             Console.Clear();
 
                             Console.WriteLine("    Seleccione un tamaño de vaso: ");
@@ -166,8 +167,7 @@ namespace Cafetera
                         {
                            
                             Console.WriteLine("    No hay vasos de 5 Onz");
-                            Console.WriteLine("    presione Enter para continuar");
-                            Console.ReadKey();
+                            Thread.Sleep(2000);
                             Console.Clear();
 
                             Console.WriteLine("     Seleccione un tamaño de vaso: ");
@@ -214,8 +214,7 @@ namespace Cafetera
                         {
                            
                             Console.WriteLine("    No hay vasos de 7 Onz");
-                            Console.WriteLine("    presione Enter para continuar");
-                            Console.ReadKey();
+                            Thread.Sleep(2000);
                             Console.Clear();
 
 
@@ -235,37 +234,90 @@ namespace Cafetera
 
                     }
 
+                    if (cantAzucar <= 0)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("           No hay Azucar, Desea Continuar?");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("           1. Si");
+                    Console.WriteLine("           2. No");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    validar = Convert.ToByte(Console.ReadLine());
+                    Console.WriteLine();
+                    Console.WriteLine();
+
+
+
+                    Console.Clear();
+
+                    if (validar == 1)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("       Eligió Café sin Azucar");
+                        Console.WriteLine();
+                        Thread.Sleep(2000);
+
+
+                        }
+
+                    if (validar == 2)
+                    {
+                        Thread.Sleep(4000);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Apagando.....");
+                        num = 0;
+                    }
+
+                }
              
 
                 } while (num != 0 && num != 1 && num != 2 && num != 3);
 
 
-                Console.WriteLine();
-                Console.WriteLine("     Ingrese Cantidad de cucharadas de Azucar: ");
-                Console.WriteLine();
-                azucar = Convert.ToByte(Console.ReadLine());
-                Console.WriteLine();
-                Console.WriteLine();
-                resultAzucar = cantAzucar;
-                Console.WriteLine();
+               
 
                 do
                 {
-                   
+                    if (cantAzucar > 0) { 
+                    Console.WriteLine();
+                    Console.WriteLine("     Ingrese Cantidad de cucharadas de Azucar: ");
+                    Console.WriteLine();
+                    azucar = Convert.ToByte(Console.ReadLine());
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    resultAzucar = cantAzucar;
+                    Console.WriteLine();
 
-                    if (azucar <= cantAzucar)
+
+                        if (azucar <= cantAzucar)
                     {
-                     
+
                         altAzucar = cantAzucar - azucar;
                         cantAzucar = altAzucar;
-                      
-
-                        Console.Clear();
-                    }
+                            Console.Clear();
 
 
+                        }
+                        
 
-                    if (azucar > cantAzucar)
+                        if (azucar < 1)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("       Eligió Café sin Azucar");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("       Presione Enter para continuar");
+                            Console.ReadKey();
+
+                        }
+
+                        if (azucar > 6)
                     {
                         do {
                         cantAzucar = resultAzucar;
@@ -275,8 +327,7 @@ namespace Cafetera
                         Console.WriteLine();
                         Console.WriteLine("     Excede la cantidad disponible, " + ""+ " Disponible: "+ cantAzucar);
                         Console.WriteLine();
-                        Console.WriteLine("     Ingrese Enter para continuar: ");
-                        Console.ReadKey();
+                                Thread.Sleep(2000);
                         
                       
 
@@ -295,57 +346,19 @@ namespace Cafetera
 
 
                         } while (azucar > resultAzucar);
-                    }
 
-                   
+
+                    }
+                    }
 
                 } while (cantAzucar < 0);
 
+         
 
 
 
-                if (cantAzucar <= 0)
-                {
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine("           No hay Azucar, Desea Continuar?");
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine("           1. Si");
-                    Console.WriteLine("           2. No");
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    validar = Convert.ToByte(Console.ReadLine());
-                    Console.WriteLine();
-                    Console.WriteLine();
-
-                    
-
-                    Console.Clear();
-
-                    if (validar == 1)
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("       Eligió Café sin Azucar");
-                        Console.WriteLine();
-                        Console.WriteLine("       Seleccione Enter para continuar");
-                        Console.ReadKey();
 
 
-                    }
-
-                    if (validar == 2)
-                    {
-                        Thread.Sleep(4000);
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Apagando.....");
-                        num = 0;
-                    }
-                    
-                }
-                
                 Console.Clear();
 
                 Console.WriteLine();
